@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import com.searchcountryapp.domain.CountryRepository
 import com.searchcountryapp.domain.model.Country
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
