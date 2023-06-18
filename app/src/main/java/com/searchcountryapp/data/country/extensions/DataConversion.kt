@@ -8,10 +8,10 @@ fun CountryDataModel.toCountryEntity() = CountryEntity(
     flagUrl = flags.flagUrl,
     population = population,
     region = region,
-    subRegion = subRegion,
+    subRegion = subRegion ?: "",
     name = name.commonName,
     mapUrl = maps.googleMaps,
-    capital = capitals[0]
+    capital = capitals?.get(0) ?: ""
 )
 
 fun CountryEntity.toCountry() = Country(

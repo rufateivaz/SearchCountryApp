@@ -1,12 +1,11 @@
 package com.searchcountryapp.data.country.local.model
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@Entity(
-    tableName = "countries",
-    primaryKeys = ["name"]
-)
+@Entity(tableName = "countries")
 data class CountryEntity(
+    @PrimaryKey(autoGenerate = false)
     val name: String,
     val population: Long,
     val capital: String,

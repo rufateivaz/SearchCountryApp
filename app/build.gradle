@@ -31,11 +31,11 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", "API_URL", '\"https://restcountries.com/v3.1\"'
+            buildConfigField "String", "API_URL", '\"https://restcountries.com/v3.1/\"'
         }
 
         release {
-            buildConfigField "String", "API_URL", '\"https://restcountries.com/v3.1\"'
+            buildConfigField "String", "API_URL", '\"https://restcountries.com/v3.1/\"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

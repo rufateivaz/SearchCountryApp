@@ -1,10 +1,9 @@
 package com.searchcountryapp.data.country.remote
 
-import com.searchcountryapp.BuildConfig
-import com.searchcountryapp.data.country.remote.model.CountryResponse
+import com.searchcountryapp.data.country.remote.model.CountryDataModel
 import retrofit2.http.GET
 
 interface CountryApi {
-    @GET("${BuildConfig.API_URL}/all")
-    suspend fun getCountries(): CountryResponse
+    @GET("all")
+    suspend fun getCountries(): List<CountryDataModel>
 }

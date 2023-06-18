@@ -30,11 +30,9 @@ class CountriesActivity : AppCompatActivity() {
 
         binding.recyclerView.adapter = countryAdapter
 
-        viewModel.countries
-
-/*        viewModel.countries.observe(this) {
+        viewModel.countries.observe(this) {
             countryAdapter.saveData(it)
-        }*/
+        }
     }
 
     private fun startTextChangeListener() {

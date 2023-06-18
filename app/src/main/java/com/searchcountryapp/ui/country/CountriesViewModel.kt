@@ -8,10 +8,14 @@ import androidx.lifecycle.viewModelScope
 import com.searchcountryapp.domain.CountryRepository
 import com.searchcountryapp.domain.model.Country
 import kotlinx.coroutines.launch
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 import retrofit2.HttpException
 import java.io.IOException
 
-class CountriesViewModel(private val repository: CountryRepository) : ViewModel() {
+class CountriesViewModel : ViewModel(), KoinComponent {
+
+    private val repository by inject<CountryRepository>()
 
     private val _countries = MutableLiveData<List<Country>>()
     val countries: LiveData<List<Country>> get() = _countries

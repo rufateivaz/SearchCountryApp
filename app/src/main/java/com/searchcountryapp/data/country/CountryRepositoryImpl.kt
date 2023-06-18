@@ -18,8 +18,7 @@ class CountryRepositoryImpl(
 
     override suspend fun loadCountries() {
         withContext(Dispatchers.IO) {
-            val response = remote.getCountries()
-            val entityCountries = response.countriesDataModel.map { it.toCountryEntity() }
+            val entityCountries = remote.getCountries().map { it.toCountryEntity() }
             local.saveCountries(entityCountries)
         }
     }
