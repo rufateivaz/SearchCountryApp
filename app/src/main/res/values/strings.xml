@@ -2,4 +2,6 @@
     <string name="app_name">SearchCountryApp</string>
     <string name="search_countries_hint">Search countries …</string>
     <string name="country_flag">Country flag</string>
+    <string name="country_population">Population: %d</string>
+    <string name="country_capital">Capital: %s</string>
 </resources>

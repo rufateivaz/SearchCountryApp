@@ -1,5 +1,7 @@
 package com.searchcountryapp.ui.country
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +10,7 @@ import com.searchcountryapp.databinding.ActivityCountriesBinding
 import com.searchcountryapp.domain.model.Country
 import com.searchcountryapp.ui.country.adapter.CountryAdapter
 import com.searchcountryapp.ui.country.injection.injectUIFeatures
+
 
 class CountriesActivity : AppCompatActivity() {
 
@@ -33,15 +36,18 @@ class CountriesActivity : AppCompatActivity() {
         viewModel.countries.observe(this) {
             countryAdapter.saveData(it)
         }
+
+        startTextChangeListener()
     }
 
     private fun startTextChangeListener() {
         binding.searchContent.doAfterTextChanged {
-            //binding.searchContent.text.toString()
+            val content = binding.searchContent.text.toString()
+            viewModel.getFlowOfCountries(content)
         }
     }
 
     private fun onItemClicked(country: Country) {
-        // call url
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(country.mapUrl)))
     }
 }

@@ -7,5 +7,5 @@ interface CountryRepository {
 
     suspend fun loadCountries()
 
-    fun getFlowOfCountries(): Flow<List<Country>>
+    fun getFlowOfCountries(content: String): Flow<List<Country>>
 }

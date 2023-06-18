@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.searchcountryapp.domain.CountryRepository
 import com.searchcountryapp.domain.model.Country
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -21,12 +23,20 @@ class CountriesViewModel : ViewModel(), KoinComponent {
     val countries: LiveData<List<Country>> get() = _countries
 
     init {
-        Log.d("HELL0!", "ViewModel was created successfully!")
+        getFlowOfCountries()
         loadCountries()
     }
 
-    private fun loadCountries() {
+    fun getFlowOfCountries(content: String = "") {
         viewModelScope.launch {
+            repository.getFlowOfCountries(content).collect {
+                _countries.value = it
+            }
+        }
+    }
+
+    private fun loadCountries() {
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 repository.loadCountries()
             } catch (e: HttpException) {

@@ -46,6 +46,7 @@ class CountryAdapter(
 
         private val name: TextView
         private val capital: TextView
+        private val population: TextView
         private val region: TextView
         private val subRegion: TextView
         private val flagImage: ImageView
@@ -53,6 +54,7 @@ class CountryAdapter(
         init {
             name = itemView.findViewById(R.id.name)
             capital = itemView.findViewById(R.id.capital)
+            population = itemView.findViewById(R.id.population)
             region = itemView.findViewById(R.id.region)
             subRegion = itemView.findViewById(R.id.subRegion)
             flagImage = itemView.findViewById(R.id.flagImage)
@@ -61,7 +63,14 @@ class CountryAdapter(
 
         fun bind(country: Country) {
             name.text = country.name
-            capital.text = country.capital
+            capital.text = itemView.context.getString(
+                R.string.country_capital,
+                country.capital
+            )
+            population.text = itemView.context.getString(
+                R.string.country_population,
+                country.population
+            )
             region.text = country.region
             subRegion.text = country.subRegion
 
