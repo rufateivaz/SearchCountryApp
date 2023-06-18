@@ -1,5 +1,9 @@
 # Countries Application
-## List of countries info are retrieved through an open source RESTful Web API and presented.
+
+The app allows to fetch the whole countries' info and present them to the users. The used principle is **Single Source of Truth**.
+* First of all, flow of data from local database into local memory (list) is configured using **kotlin coroutines flow**.
+* Second, all of the countries and their info are loaded into local database, employing **kotlin coroutines suspend** method.
+* When the data is loaded (or reloaded) into the local database, the flow is triggered and the list absorbs the updated data from the local database.
 
 ## Sample
 <img src="GIF/record1.gif" width="200" height="400"/> <img src="GIF/record2.gif" width="200" height="400"/> <img src="GIF/record3.gif" width="200" height="400"/>
