@@ -13,7 +13,7 @@ The app allows to fetch the whole countries' info and present them to the users.
 * Dependency Injection **Koin** (note: will be changed into something else.
 * Architecture: **MVVM** (viewmodel communicates with the repository interface directly, without any use case)
 * Approach: **Multi-module - app, data and domain** (currently all are in app module but will be splited to separate modules)
-* Network issues: **Retrofit, OkHttp, LoggingInterceptor**
-* Database issues: **Room**
+* Network: **Retrofit, OkHttp, LoggingInterceptor**
+* Database: **Room**
 * Extension functions: to convert from data model to entity model and from entity model to domain model.
-* UI: Activity, LiveData, RecyclerView, Adapter, onItemClick handling. 
+* UI: Jetpack Compose, Activity, LiveData. 
