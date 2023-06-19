@@ -5,14 +5,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.searchcountryapp.domain.CountryRepository
-import com.searchcountryapp.domain.model.Country
+import com.sample.domain.CountryRepository
+import com.sample.domain.model.Country
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
-import retrofit2.HttpException
-import java.io.IOException
+import java.lang.Exception
 
 class CountriesViewModel : ViewModel(), KoinComponent {
 
@@ -38,10 +37,8 @@ class CountriesViewModel : ViewModel(), KoinComponent {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 repository.loadCountries()
-            } catch (e: HttpException) {
-                Log.d("Http", "Error while loading countries!")
-            } catch (e: IOException) {
-                Log.d("IOException", "Something went wrong!")
+            } catch (e: Exception) {
+                Log.d("Exception!","Error while loading countries!")
             }
         }
     }

@@ -39,7 +39,6 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.searchcountryapp.ui.theme.CountriesApplicationTheme
 import com.searchcountryapp.R
-import com.searchcountryapp.domain.model.Country
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
@@ -92,7 +91,7 @@ class CountriesActivity : AppCompatActivity() {
     }
 
     @Composable
-    private fun CountryItemCard(country: Country) {
+    private fun CountryItemCard(country: com.sample.domain.model.Country) {
         Card(
             modifier = Modifier
                 .padding(4.dp)
@@ -172,7 +171,7 @@ class CountriesActivity : AppCompatActivity() {
         }
     }
 
-    private fun onItemClicked(country: Country) {
+    private fun onItemClicked(country: com.sample.domain.model.Country) {
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(country.mapUrl)))
     }
 }
