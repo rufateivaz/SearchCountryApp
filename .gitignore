@@ -10,7 +10,6 @@
 local.properties
 
 # Project exclude paths
-/buildSrc/build/
 /app/build
 /data/build/
 /data/build/intermediates/javac/simpsonsviewerDebug/classes/
