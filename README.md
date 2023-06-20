@@ -1,7 +1,7 @@
 # Countries Application
 
 The app allows to fetch the whole countries' info and present them to the users. The used principle is **Single Source of Truth**.
-* First of all,the flow configuration between local database and local memory is built using **kotlin coroutines flow**.
+* First of all,the flow configuration between database and local memory is built using **kotlin coroutines flow**.
 * Second, all of the countries and their info are loaded into local database, employing **kotlin coroutines suspend** method.
 * When the data is loaded (or reloaded) into the local database, the flow is triggered and the local memory absorbs the updated data from local database.
 
