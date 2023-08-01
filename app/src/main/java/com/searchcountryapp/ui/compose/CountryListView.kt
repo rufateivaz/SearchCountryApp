@@ -13,7 +13,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -25,6 +24,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -41,7 +41,6 @@ import com.searchcountryapp.ui.country.CountriesViewModel
 /**
  * Country List view composable method.
  * */
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CountryListView(
     vm: CountriesViewModel,
@@ -73,7 +72,7 @@ fun CountryListView(
 }
 
 @Composable
-private fun CountryItemCard(
+fun CountryItemCard(
     country: Country,
     onItemClicked: (Country) -> Unit
 ) {
@@ -82,7 +81,8 @@ private fun CountryItemCard(
             .padding(4.dp)
             .fillMaxWidth()
             .wrapContentHeight()
-            .clickable { onItemClicked(country) },
+            .clickable { onItemClicked(country) }
+            .testTag("CountryItemCard"),
         shape = MaterialTheme.shapes.medium,
         elevation = CardDefaults.cardElevation(4.dp),
         colors = CardDefaults.cardColors(Color.LightGray)

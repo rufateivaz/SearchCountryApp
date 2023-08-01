@@ -1,0 +1,52 @@
+[versions]
+activity-compose = "1.3.0"
+androidx-junit = "1.1.5"
+appcompat = "1.6.1"
+coil-compose = "2.4.0"
+compose-bom = "2023.06.01"
+converter-gson = "2.9.0"
+espresso-core = "3.5.1"
+gson = "2.10.1"
+junit = "4.13.2"
+koin-android = "3.4.3"
+kotlinx-coroutines-core = "1.7.3"
+logging-interceptor = "4.11.0"
+material = "1.9.0"
+retrofit = "2.9.0"
+room-ktx = "2.5.2"
+compose = "1.4.3"
+
+[libraries]
+androidx-activityCompose = { group = "androidx.activity", name = "activity-compose", version = "activity-compose"}
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+androidx-junit-1_1_3 = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room-ktx" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room-ktx" }
+androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "compose" }
+
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom"}
+compose-material3 = { group = "androidx.compose.material3", name = "material3"}
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation"}
+compose-foundationLayout = { group = "androidx.compose.foundation", name = "foundation-layout"}
+compose-ui = { group = "androidx.compose.ui", name = "ui"}
+compose-uiTest = { group = "androidx.compose.ui", name = "ui-test", version.ref = "compose"}
+compose-uiTestJunit4 = { group = "androidx.compose.ui", name = "ui-test-junit4"}
+compose-uiUnit = { group = "androidx.compose.ui", name = "ui-unit"}
+compose-uiUtil = { group = "androidx.compose.ui", name = "ui-util"}
+compose-uiText = { group = "androidx.compose.ui", name = "ui-text"}
+compose-uiGraphics = { group = "androidx.compose.ui", name = "ui-graphics"}
+compose-uiToolingPreview = { group = "androidx.compose.ui", name = "ui-tooling-preview"}
+compose-uiTooling = { group = "androidx.compose.ui", name = "ui-tooling"}
+compose-uiTestManifest = { group = "androidx.compose.ui", name = "ui-test-manifest"}
+
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converter-gson" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+junit = { module = "junit:junit", version.ref = "junit" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin-android" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines-core" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "logging-interceptor" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
