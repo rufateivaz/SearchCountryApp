@@ -9,13 +9,9 @@ import com.sample.domain.CountryRepository
 import com.sample.domain.model.Country
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
 import java.lang.Exception
 
-class CountriesViewModel : ViewModel(), KoinComponent {
-
-    private val repository by inject<CountryRepository>()
+class CountriesViewModel(private val repository: CountryRepository) : ViewModel() {
 
     private val _countries = MutableLiveData<List<Country>>()
     val countries: LiveData<List<Country>> get() = _countries
@@ -26,9 +22,9 @@ class CountriesViewModel : ViewModel(), KoinComponent {
     }
 
     fun getFlowOfCountries(content: String = "") {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.getFlowOfCountries(content).collect {
-                _countries.value = it
+                _countries.postValue(it)
             }
         }
     }
@@ -38,7 +34,7 @@ class CountriesViewModel : ViewModel(), KoinComponent {
             try {
                 repository.loadCountries()
             } catch (e: Exception) {
-                Log.d("Exception!","Error while loading countries!")
+                Log.d("Exception!", "Error while loading countries!")
             }
         }
     }

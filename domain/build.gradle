@@ -10,4 +10,7 @@ java {
 
 dependencies {
     implementation libs.kotlinx.coroutines.core
+
+    api(libs.junit)
+    api(libs.mockito.core)
 }
