@@ -17,7 +17,7 @@
         android:theme="@style/Theme.SearchCountryApp"
         tools:targetApi="31" >
 
-        <activity android:name=".ui.country.CountriesActivity"
+        <activity android:name=".ui.country.RootActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

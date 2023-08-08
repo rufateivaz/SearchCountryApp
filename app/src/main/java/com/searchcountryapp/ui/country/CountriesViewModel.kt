@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class CountriesViewModel(private val repository: CountryRepository) : ViewModel() {
+class CountriesViewModel(val repository: CountryRepository) : ViewModel() {
 
     private val _countries = MutableLiveData<List<Country>>()
     val countries: LiveData<List<Country>> get() = _countries
