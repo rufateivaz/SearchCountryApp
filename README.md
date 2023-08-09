@@ -12,6 +12,7 @@ The app allows to fetch the whole countries' info and present them to the users.
 * Implemented in **Android Studio** IDE using 100% **Kotlin**.
 * Utilized **MVVM** clean architecture by using **Koin** dependency injection and by following **multi-module** approach (app, data and domain).
 * Viewmodel directly communicates with the repository interface without an extra use-case layer.
+* Covered with **Unit** and **Android** tests using **Mockito**.
 * Api-calls: **Kotlin Coroutines**.
 * Network: **Retrofit, OkHttp, LoggingInterceptor**
 * Database: **Room**
