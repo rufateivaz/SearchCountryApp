@@ -48,7 +48,7 @@ class CountryLocalDataSourceTest {
         val actual = countryLocalDataSource.getCountries().first()
 
         // Then
-        assertEquals(actual, expected)
+        assertEquals(expected, actual)
     }
 
     private val countryEntity = CountryEntity(

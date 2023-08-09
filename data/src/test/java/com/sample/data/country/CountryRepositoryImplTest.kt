@@ -15,7 +15,6 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.verify
 import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations.initMocks
@@ -37,7 +36,7 @@ class CountryRepositoryImplTest {
     fun whenLoadingCountriesVerifyThatLoaded() = runBlocking {
         // Given
         val dataModels = listOf(countryDataModel)
-        Mockito.`when`(remoteDataSource.getCountries()).thenReturn(dataModels)
+        `when`(remoteDataSource.getCountries()).thenReturn(dataModels)
 
         // When
         val countryRepositoryImpl = CountryRepositoryImpl(localDataSource, remoteDataSource)
@@ -59,7 +58,7 @@ class CountryRepositoryImplTest {
         val actual = countryRepositoryImpl.getFlowOfCountries("United States").first()
 
         // Then
-        assertEquals(actual, listOf(country))
+        assertEquals(listOf(country), actual)
     }
 
     @Test
@@ -73,7 +72,7 @@ class CountryRepositoryImplTest {
         val actual = countryRepositoryImpl.getFlowOfCountries("United Europe").first()
 
         // Then
-        assertEquals(actual, emptyList<Country>())
+        assertEquals(emptyList<Country>(), actual)
     }
 
     private val countryDataModel = CountryDataModel(
