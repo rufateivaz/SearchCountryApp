@@ -5,6 +5,7 @@ import com.sample.data.country.extensions.toCountryEntity
 import com.sample.data.country.local.CountryLocalDataSource
 import com.sample.data.country.remote.CountryRemoteDataSource
 import com.sample.domain.CountryRepository
+import com.sample.domain.model.Country
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -18,13 +19,13 @@ class CountryRepositoryImpl(
         local.saveCountries(entityCountries)
     }
 
-    override fun getFlowOfCountries(content: String): Flow<List<com.sample.domain.model.Country>> =
+    override fun getFlowOfCountries(content: String): Flow<List<Country>> =
         local.getCountries().map { countryEntities ->
-            countryEntities.toCountries().filter {country ->
+            countryEntities.toCountries().filter { country ->
                 country.name.contains(content, ignoreCase = true) ||
-                country.capital.contains(content, ignoreCase = true) ||
-                country.region.contains(content, ignoreCase = true) ||
-                country.subRegion.contains(content, ignoreCase = true)
+                        country.capital.contains(content, ignoreCase = true) ||
+                        country.region.contains(content, ignoreCase = true) ||
+                        country.subRegion.contains(content, ignoreCase = true)
             }
         }
 }
